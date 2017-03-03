@@ -14,6 +14,36 @@ $ npm i micro-middleware --save-dev
 
 ## Usage
 
+### Create a simple middleware
+
+```js
+// require micro-middleware helper
+var { applyMiddleware } = require('micro-middleware')
+
+// a simple middleware should look like this
+const logging = fn => async function process (...args) {
+  console.log(`log args: ${args}`)
+  let data = await fn.apply(null, args)
+  console.log(`log returned data: ${data}`)
+  return data
+}
+
+const middleware = [
+  logging
+]
+
+// create your micro service
+const microService = async (req, res) => {
+    return "hello world"
+}
+
+// apply middleware and export
+module.exports = applyMiddleware(microService, middleware)
+
+```
+
+### Apply existing middleware to your microservice
+
 ```js
 // require micro-middleware helper
 var { applyMiddleware } = require('micro-middleware')

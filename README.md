@@ -2,6 +2,8 @@
 
 > a simple helper to add middleware to your zeit/micro service
 
+This will become a set of simple helpers to create and apply middleware to your microsevices using [Zeit](https://zeit.co/)'s [micro](https://github.com/zeit/micro) framework.
+
 ## Install
 
 Install with [npm](https://www.npmjs.com/)

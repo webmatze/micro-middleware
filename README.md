@@ -21,7 +21,7 @@ const cors = require('micro-cors')()
 const compress = require('micro-compress')
 const middleware = [
   cors, 
-  micro-compress
+  compress
 ]
 
 // create your micro service
